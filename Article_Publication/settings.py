@@ -31,12 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'material',
+    'material.admin',
+    'material.admin.default',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'api',
+
 ]
 
 MIDDLEWARE = [
@@ -122,3 +128,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+"""
+Admin page config
+"""
+
+
+
+
+MATERIAL_ADMIN_SITE = {
+     #'FAVICON':  'path/to/favicon',   # Admin site favicon (path to static should be specified)
+    'MAIN_BG_COLOR':  'red',  # Admin site main color, css color should be specified
+     'SHOW_THEMES':  True,  #  Show default admin themes button
+    'TRAY_REVERSE': True,  # Hide object-tools and additional-submit-line by default
+    'NAVBAR_REVERSE': True,  # Hide side navbar by default
+    'SHOW_COUNTS': True, # Show instances counts for each model
+
+}
